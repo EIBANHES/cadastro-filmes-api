@@ -3,9 +3,9 @@ const express = require('express');
 const app = express();
 
 // Banco de dados
-const database = require("./database/sqlite")
+const migrationsRun = require("./database/sqlite/migrations")
 
-database();
+migrationsRun();
 
 // Import de rotas
 const routes = require("./routes")
