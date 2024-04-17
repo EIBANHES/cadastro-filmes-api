@@ -8,7 +8,7 @@ class UserController {
 
 
     try {
-      const { name, email, password, avatar } = request.body;
+      const { name, email, password } = request.body;
       const userExist = await knex('users').where({ email }).first();
       console.log(userExist);
 
@@ -24,7 +24,6 @@ class UserController {
         name: name,
         email: email,
         password: passwordHash,
-        avatar: avatar
       })
 
       response.json({});
