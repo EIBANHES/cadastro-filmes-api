@@ -2,10 +2,12 @@
 const express = require('express');
 const app = express();
 
+// migrationsRun();
+
+app.use(express.json())
+
 // Banco de dados
 const migrationsRun = require("./database/sqlite/migrations")
-
-migrationsRun();
 
 // Import de rotas
 const routes = require("./routes")
